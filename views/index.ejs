@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title><%= title %></title>
+</head>
+<body>
+
+  <header>
+    <h1>teezy blog</h1>
+    <nav>
+        <ul>
+           <a href="/home"> <li>Home</li></a>
+           <a href="/post"><li>Post</li></a>
+           <a href="/logout"><li>logout</li></a>
+        </ul>
+    </nav>
+</header>
+    
+    <div class="container">
+        
+      <% if (blogs.length > 0) { %>
+        <% blogs.forEach(blog => {%>
+          <div class="all-post">
+              <div class="post">
+            <a href="/blogs/<%= blog._id%>">
+                <head><h4><%= blog.title %></h4></head>
+                <blockquote class="post-text"> <%= blog.content %>  </blockquote>
+                <h5 class="post-author"><%= blog.name %></h5>
+                <h6 class="post-date">20 August 2022</h6>
+                </a>
+                <h4>like:<%=blog.likes%></h4>
+                <div class="line"></div>
+              </div>
+            </a>
+          </div>
+            
+                <%}) %>
+                <% } else { %>
+                  <p>There are no blogs to display</p>
+
+             <% }  %>
+
+            
+            
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    
+    
+</body>
+</html>
