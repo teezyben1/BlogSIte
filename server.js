@@ -12,7 +12,7 @@ const AuthRouter = require('./routes/blogAuthRoutes/blogAuthRoutes')
   
 
 // Port Address
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 9000;
 
 // views and other middlewares
 app.set('view engine', 'ejs');
