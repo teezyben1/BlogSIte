@@ -13,7 +13,7 @@ const updateLikes = async(req,res) => {
     const id = req.params.id;
 
     const user = await Blog.findOneAndUpdate({_id: id}, {$inc : {likes: 1}} )
-    return res.redirect('/details')
+    return res.redirect('/blogs/likes/:id')
 
 }
 
