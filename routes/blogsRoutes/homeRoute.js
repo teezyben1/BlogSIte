@@ -3,7 +3,7 @@ const authenticate = require('../../authentication/authenticate');
 const homeRouter = express.Router();
 const {home, updateLikes} = require('../../controllers/blogControllers/homeControllers')
 
-homeRouter.get('/', authenticate, home )
+homeRouter.get('/home', authenticate, home )
 homeRouter.get('/blogs/likes/:id', updateLikes)
 
 
