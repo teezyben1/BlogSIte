@@ -12,7 +12,7 @@ const AuthRouter = require('./routes/blogAuthRoutes/blogAuthRoutes')
   
 
 // Port Address
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 8000;
 
 // views and other middlewares
 app.set('view engine', 'ejs');
@@ -27,8 +27,13 @@ app.use(express.urlencoded({extended: true}));
 
 
 // DataBase Connection
-const DBURI = "mongodb://localhost:27017/BlogSite"
-    mongoose.connect(DBURI)
+const DBURI ='mongodb+srv://benteezy44:benteezy44@benteezy44.f9opiaj.mongodb.net/?retryWrites=true&w=majority'                                                  //"mongodb://localhost:27017/BlogSite"
+    mongoose.connect(DBURI,
+    {
+         useNewUrlParser: true,
+        // useFindAndModify: false,
+        useUnifiedTopology: true
+      })
         .then((data) => {
             app.listen(PORT, () => console.log(`server listening on port: ${PORT} and connected to DB @ ${DBURI}`))
 
