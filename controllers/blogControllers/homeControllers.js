@@ -13,8 +13,9 @@ const updateLikes = async(req,res) => {
     const id = req.params.id;
 
     const user = await Blog.findOneAndUpdate({_id: id}, {$inc : {likes: 1}} )
-    res.redirect(`/blogs/${id}`)
-
+    return res.json({
+        message: user ? true: false
+    });
 
 }
 
