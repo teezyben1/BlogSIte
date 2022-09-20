@@ -27,13 +27,8 @@ app.use(express.urlencoded({extended: true}));
 
 
 // DataBase Connection
-const DBURI ='mongodb+srv://benteezy44:benteezy44@benteezy44.f9opiaj.mongodb.net/?retryWrites=true&w=majority'                                                  //"mongodb://localhost:27017/BlogSite"
-    mongoose.connect(DBURI,
-    {
-         useNewUrlParser: true,
-        // useFindAndModify: false,
-        useUnifiedTopology: true
-      })
+const DBURI ="mongodb://localhost:27017/BlogSite"
+    mongoose.connect(DBURI)
         .then((data) => {
             app.listen(PORT, () => console.log(`server listening on port: ${PORT} and connected to DB @ ${DBURI}`))
 
