@@ -1,4 +1,5 @@
 //Core Modules & Dependencies
+require('dotenv').config()
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 const path = require('path');
@@ -12,7 +13,7 @@ const AuthRouter = require('./routes/blogAuthRoutes/blogAuthRoutes')
   
 
 // Port Address
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || process.env.PORT;
 
 // views and other middlewares
 app.set('view engine', 'ejs');
@@ -27,7 +28,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 // DataBase Connection
-const DBURI ='mongodb+srv://benteezy44:benteezy44@benteezy44.f9opiaj.mongodb.net/?retryWrites=true&w=majority'                                                  //"mongodb://localhost:27017/BlogSite"
+const DBURI = process.env.DBCON                                                  //"mongodb://localhost:27017/BlogSite"
     mongoose.connect(DBURI,
     {
          useNewUrlParser: true,
